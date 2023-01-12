@@ -5,7 +5,11 @@
 </template>
 
 <script setup lang="ts">
-const { id } = useRoute().params;
+  definePageMeta({
+    layout: 'layout-products'
+  });
+
+  const { id } = useRoute().params;
 
 
 </script>
