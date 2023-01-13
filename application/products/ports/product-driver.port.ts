@@ -3,5 +3,5 @@ import {ProductDetailDTO} from "~/application/products/business/dtos/product-det
 
 export interface ProductDriverPort {
     getProducts(): Promise<ProductDTO[]>;
-    getProduct(id:number): Promise<ProductDetailDTO>;
+    getProduct(productId:number): Promise<ProductDetailDTO>;
 }

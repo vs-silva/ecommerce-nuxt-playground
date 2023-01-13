@@ -5,6 +5,7 @@ import type {ProductDTO} from "./business/dtos/product.dto";
 import {ProductMapperService} from "./business/services/mapper/product-mapper.service";
 import {ProductResourcesConstants} from "./business/constants/product-resources.constants";
 
+
 export function ProductsService(reader: ProductDrivenPort): ProductDriverPort {
 
     async function getProducts(): Promise<ProductDTO[]> {
@@ -21,8 +22,17 @@ export function ProductsService(reader: ProductDrivenPort): ProductDriverPort {
         return await ProductMapperService.mapToProducts(data);
     }
 
-    async function getProduct(id: number): Promise<ProductDetailDTO> {
-        return <ProductDetailDTO>{};
+    async function getProduct(productId: number): Promise<ProductDetailDTO> {
+        const response = await reader.get(`${ProductResourcesConstants.Products}/${productId}`);
+
+        // @ts-ignore
+        const data = response['data'];
+
+        if(!data) {
+            return <ProductDetailDTO>{};
+        }
+
+        return await ProductMapperService.mapToProduct(data);
     }
 
     return {
