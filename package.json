@@ -7,10 +7,11 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "test:cov": "vitest run --coverage",
-    "test": "vitest --environment jsdom --root src/"
+    "test": "vitest --environment jsdom --root ./"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.6"
+    "@pinia/nuxt": "^0.4.6",
+    "axios": "^1.2.2"
   },
   "devDependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.7",
