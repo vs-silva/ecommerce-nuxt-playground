@@ -1,16 +1,19 @@
 import {ref} from "@vue/reactivity";
+import type {ProductDTO} from "../application/products/business/dtos/product.dto";
+import type {ProductDetailDTO} from "../application/products/business/dtos/product-detail.dto";
+import Products from "../application/products";
 
 export function ProductsStore () {
 
-    const products = ref([]);
-    const product = ref({});
+    const products = ref(<ProductDTO[]>[]);
+    const product = ref(<ProductDetailDTO>{});
 
     async function getProducts(): Promise<void> {
-        products.value = [];
+        products.value = await Products.getProducts();
     }
 
-    async function getProductDetails(): Promise<void> {
-        product.value = {};
+    async function getProductDetails(id: number): Promise<void> {
+        product.value = await Products.getProduct(id);
     }
 
     return {
