@@ -1,17 +1,13 @@
 <template>
   <div>
-    <p>{{product.id}}</p>
-    <p>{{product.image}}</p>
-    <p>{{product.title}}</p>
-    <p>{{product.description}}</p>
-    <p>{{product.price}}</p>
-    <p>{{product.category}}</p>
+    <ProductDetails :product="product"/>
   </div>
 </template>
 
 <script setup lang="ts">
   import Stores from "~/stores";
   import {storeToRefs} from "pinia";
+  import ProductDetails from "~/components/product-details.vue";
 
   definePageMeta({
     layout: 'layout-products'

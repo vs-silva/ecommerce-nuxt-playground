@@ -2,7 +2,7 @@
   <div>
     <div  v-if="products" class="grid grid-cols-4 gap-5">
       <div v-for="(product, index) in products" :key="index">
-        <NuxtLink :to="`/products/${product.id}`">{{product.title}}</NuxtLink>
+        <ProductCard :product="product"/>
       </div>
     </div>
   </div>
@@ -11,6 +11,7 @@
 <script setup lang="ts">
   import Stores from "~/stores";
   import {storeToRefs} from "pinia";
+  import ProductCard from "~/components/product-card.vue";
 
   definePageMeta({
     layout: 'layout-products'

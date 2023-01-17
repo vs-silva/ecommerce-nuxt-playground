@@ -1,0 +1,38 @@
+<template>
+  <div class="card">
+    <div class="grid grid-cols-2 gap-10">
+      <div class="p-7">
+        <img :src="product.image" alt="product image" class="mx-auto my-7">
+      </div>
+      <div class="p-7">
+        <h2 class="text-4xl my-7">{{product.title}}</h2>
+        <p class="text-xl my-7">Price: {{product.price}}€</p>
+        <h3 class="font-bold border-b-2 mb-4 pb-2">Product Description:</h3>
+        <p class="mb-7">{{product.description}}</p>
+        <h4 class="font-bold border-b-2 mb-4 pb-2">Product Category:</h4>
+        <p class="mb-7">{{product.category}}</p>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<script setup lang="ts">
+import type {ProductDetailDTO} from "~/application/products/business/dtos/product-detail.dto";
+
+defineProps({
+  product: {
+    type: Object,
+    required: false,
+    default: () => <ProductDetailDTO>{}
+  }
+});
+
+</script>
+
+<style scoped>
+  img {
+    max-width: 400px;
+  }
+
+</style>
