@@ -11,6 +11,10 @@
         <p class="mb-7">{{product.description}}</p>
         <h4 class="font-bold border-b-2 mb-4 pb-2">Product Category:</h4>
         <p class="mb-7">{{product.category}}</p>
+        <button class="btn flex">
+          <i class="material-icons mr-2">add_shopping_cart</i>
+          <span>Add to cart</span>
+        </button>
       </div>
     </div>
 

@@ -17,9 +17,14 @@
     layout: 'layout-products'
   });
 
+  useHead({
+    title: 'Ecommerce Nuxt3 Playground Merchandise'
+  });
+
   const productStore = Stores.useProductStore();
   const { products } = storeToRefs(productStore);
   await productStore.getProducts();
+
 
 
 </script>
