@@ -1,6 +1,10 @@
 <template>
   <div>
-    <p>{{products}}</p>
+    <div  v-if="products" class="grid grid-cols-4 gap-5">
+      <div v-for="(product, index) in products" :key="index">
+        <NuxtLink :to="`/products/${product.id}`">{{product.title}}</NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 
