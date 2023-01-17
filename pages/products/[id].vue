@@ -18,6 +18,13 @@
   const { product } = storeToRefs(productStore);
   await productStore.getProductDetails(parseInt(id.toString()));
 
+  if(!Object.keys(product.value).length) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Product not found',
+      fatal: true
+    });
+  }
 
 </script>
 
