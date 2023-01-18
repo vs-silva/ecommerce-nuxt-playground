@@ -1,3 +1,4 @@
 export const StoreIds = {
-    ProductsStore: 'products-store'
+    ProductsStore: 'products-store',
+    AboutStore: 'about-store'
 } as const;

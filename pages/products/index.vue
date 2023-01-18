@@ -25,8 +25,6 @@
   const { products } = storeToRefs(productStore);
   await productStore.getProducts();
 
-
-
 </script>
 
 <style scoped>
