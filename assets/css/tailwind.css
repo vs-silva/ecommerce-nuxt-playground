@@ -3,7 +3,6 @@
 @tailwind utilities;
 @tailwind screens;
 
-
 /* Custom */
 body {
     @apply bg-gray-50;

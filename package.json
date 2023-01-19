@@ -6,7 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test:cov": "vitest run --coverage",
+    "test:cov": "vitest --environment jsdom run --coverage",
     "test": "vitest --environment jsdom --root ./"
   },
   "dependencies": {
