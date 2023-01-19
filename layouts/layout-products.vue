@@ -8,6 +8,7 @@
 
     <!-- out the page content -->
     <div  class="container mx-auto p-4">
+      <loader />
       <slot />
     </div>
 
@@ -25,6 +26,7 @@
 
 <script setup lang="ts">
 
+import Loader from "~/components/loader.vue";
 </script>
 
 <style scoped>
